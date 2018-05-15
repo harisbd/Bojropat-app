@@ -4,7 +4,7 @@
     android:paddingRight="0dip"
     android:paddingTop="0dip"
     android:paddingBottom="0dip" tools:context="MainActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/white">
     <RelativeLayout
         android:id="@+id/msw_welcome"
         android:layout_width="match_parent"
