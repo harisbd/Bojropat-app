@@ -12,12 +12,12 @@ class SmartWebView {
 
 	//Permission variables
 	static boolean ASWP_JSCRIPT     = true;     //enable JavaScript for webview
-	static boolean ASWP_FUPLOAD     = true;     //upload file from webview
-	static boolean ASWP_CAMUPLOAD   = true;     //enable upload from camera for photos
+	static boolean ASWP_FUPLOAD     = false;     //upload file from webview
+	static boolean ASWP_CAMUPLOAD   = false;     //enable upload from camera for photos
  	static boolean ASWP_MULFILE     = false;    //upload multiple files in webview; not stable yet
-	static boolean ASWP_LOCATION    = true;     //track GPS locations
+	static boolean ASWP_LOCATION    = false;     //track GPS locations
 	static boolean ASWP_RATINGS     = true;     //show ratings dialog; auto configured, edit method get_rating() for customizations
-	static boolean ASWP_PBAR        = true;     //show progress bar in app
+	static boolean ASWP_PBAR        = false;     //show progress bar in app
 	static boolean ASWP_ZOOM        = false;    //zoom control for webpages view
 	static boolean ASWP_SFORM       = false;    //save form cache and auto-fill information
 	static boolean ASWP_OFFLINE     = false;    //whether the loading webpages are offline or online

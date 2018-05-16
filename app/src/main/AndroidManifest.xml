@@ -18,20 +18,6 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:xlargeScreens="true" />
-    <!--
-        Remove permissions that your app doesn't require, asking for authority over unwanted information can cause damage to your reputation among your users
-    -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-
-    <!-- remove location.gps feature if not using permission ACCESS_FINE_LOCATION -->
-    <uses-feature android:name="android.hardware.location.gps" />
-    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
     <application
         android:allowBackup="true"
