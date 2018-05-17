@@ -52,6 +52,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -85,8 +89,10 @@ public class MainActivity extends AppCompatActivity {
     TextView asw_loading_text;
     NotificationManager asw_notification;
     Notification asw_notification_new;
+    private AdView mAdView;
 
-    private String asw_cam_message;
+
+	private String asw_cam_message;
     private ValueCallback<Uri> asw_file_message;
     private ValueCallback<Uri[]> asw_file_path;
     private final static int asw_file_req = 1;
@@ -140,7 +146,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (ASWP_PBAR) {
+		// Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+		MobileAds.initialize(this, "ca-app-pub-7650311938242933~4567401449");
+
+		mAdView = findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		mAdView.loadAd(adRequest);
+
+		Log.d(TAG, "onCreate: this is a test device"+adRequest.isTestDevice(this));
+		if (ASWP_PBAR) {
             asw_progress = (ProgressBar) findViewById(R.id.msw_progress);
         } else {
             findViewById(R.id.msw_progress).setVisibility(View.GONE);
