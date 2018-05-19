@@ -70,7 +70,7 @@
 		android:layout_centerHorizontal="true"
 		android:layout_alignParentBottom="true"
 		ads:adSize="BANNER"
-		ads:adUnitId="ca-app-pub-7650311938242933/4044657267">
+		ads:adUnitId="ca-app-pub-7650311938242933/8424037351">
 	</com.google.android.gms.ads.AdView>
 
 	<ProgressBar

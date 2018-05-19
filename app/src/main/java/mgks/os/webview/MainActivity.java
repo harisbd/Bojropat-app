@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 		// Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-		MobileAds.initialize(this, "ca-app-pub-7650311938242933~4567401449");
+		MobileAds.initialize(this, "ca-app-pub-7650311938242933~8606750621");
 
 		mAdView = findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
