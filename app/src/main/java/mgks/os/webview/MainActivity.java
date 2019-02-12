@@ -29,6 +29,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -55,8 +56,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
@@ -65,6 +68,8 @@ import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     NotificationManager asw_notification;
     Notification asw_notification_new;
     private AdView mAdView;
+	private InterstitialAd mInterstitialAd;
 
 
 	private String asw_cam_message;
@@ -162,6 +168,40 @@ public class MainActivity extends AppCompatActivity {
 		mAdView = findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
 		mAdView.loadAd(adRequest);
+
+		mInterstitialAd = new InterstitialAd(this);
+		mInterstitialAd.setAdUnitId("ca-app-pub-7650311938242933/9908047328 ");
+		mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+		mInterstitialAd.setAdListener(new AdListener() {
+			@Override
+			public void onAdClosed() {
+				// Load the next interstitial.
+				mInterstitialAd.loadAd(new AdRequest.Builder().build());
+			}
+
+		});
+
+		final Handler handleer = new Handler(new Handler.Callback() {
+			@Override
+			public boolean handleMessage(Message msg) {
+				if (mInterstitialAd.isLoaded()) {
+					mInterstitialAd.show();
+				} else {
+					Log.d("TAG", "The interstitial wasn't loaded yet.");
+				}
+				return true;
+			}
+		});
+
+
+		Timer adTimer = new Timer();
+		adTimer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				handleer.sendEmptyMessage(333);
+			}
+		}, 4000, 20000);
 
 		Log.d(TAG, "onCreate: this is a test device"+adRequest.isTestDevice(this));
 		if (ASWP_PBAR) {
