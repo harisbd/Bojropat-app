@@ -8,3 +8,40 @@ background-color: rgb(0, 0, 0)!important;
 color: rgb(232, 255, 142)!important;
 text-shadow: none!important;
 }
+
+
+
+a{
+text –decoration: none;
+display: inline-block;
+padding:8px 16px;
+}
+
+a:hover{
+background-color: rgb(24, 209, 8);
+text-shadow: 5px 3px 2px #4558e6;
+color: green;
+border-radius:30px;
+}
+
+.previous{
+background-color:#f0ac85;
+color: #f0ac85;
+border-radius:5px;
+-0-transaction: .5s;
+-ms-transaction: .5s;
+-webkit-transaction: .5s;
+transaction: .5s;
+}
+
+.next{
+background-color:#84e6a1;
+color: #84e6a1;
+border-radius:5px;
+-0-transaction: .5s;
+-ms-transaction: .5s;
+-webkit-transaction: .5s;
+transaction: .5s;
+}
+
+

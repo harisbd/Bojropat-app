@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-	compileSdkVersion 27
+	compileSdkVersion 28
 	buildToolsVersion '27.0.3'
 	defaultConfig {
 		applicationId 'com.blogspot.harisbd'
 		minSdkVersion 19
-		targetSdkVersion 27
-		versionCode 6
-		versionName '2.4.2'
+		targetSdkVersion 28
+		versionCode 12
+		versionName '2.89'
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 	}
 	buildTypes {
